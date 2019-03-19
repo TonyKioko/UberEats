@@ -15,9 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+
+from ubereatsapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('ubereatsapp.urls')),
+
+    url(r'^restaurant/sign-in/$', auth_views.login,
+        {'template_name': 'restaurant/sign_in.html'},
+        name = 'restaurant-sign-in'),
+    url(r'^restaurant/sign-out', auth_views.logout,
+        {'next_page': '/'},
+        name = 'restaurant-sign-out'),
+
+    url(r'^restaurant/$', views.restaurant_home, name = 'restaurant-home'),
+
 
 ]
