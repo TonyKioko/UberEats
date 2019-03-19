@@ -19,6 +19,9 @@ from django.contrib.auth import views as auth_views
 
 from ubereatsapp import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('ubereatsapp.urls')),
@@ -32,5 +35,11 @@ urlpatterns = [
 
     url(r'^restaurant/$', views.restaurant_home, name = 'restaurant-home'),
 
+    url(r'^restaurant/sign-up', views.restaurant_sign_up,
+        name = 'restaurant-sign-up'),
+
 
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
