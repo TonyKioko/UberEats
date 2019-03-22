@@ -6,25 +6,38 @@ Restaurant
 
 
 {% block sidebar%}
-Restaurant, Hi {{request.user}}
+
+<div class="text-center">
+<img src={{request.user.restaurant.logo.url}} alt="" class="img-circle" width="70" height="70">
 <br/>
-<a href=
-{% url 'restaurant-order'  %}
+<br/>
+<h4>Hi, {{request.user.get_full_name}}</h4>
+<h5>{{request.user.restaurant.name}}</h5>
+</div>
 
->Account</a>
-<a href=
-{% url 'restaurant-meal'  %}
+<br/>
+<div class="list-group text-center">
+      <span class="text-uppercase">Dashboard</span>
 
->Meal</a>
-<a href=
-{% url 'restaurant-report'  %}
+      <a href="{% url 'restaurant-order' %}"
+          class="list-group-item {% if request.path == restaurant_order_url %} active {% endif %} ">
+          Orders
+          <span class="badge"></span>
+      </a>
+      <a href="{% url 'restaurant-meal' %}"
+          class="list-group-item {% if request.path == restaurant_meal_url %} active {% endif %} ">Meals</a>
+      <a href="{% url 'restaurant-report' %}"
+          class="list-group-item {% if request.path == restaurant_report_url %} active {% endif %} ">Reports</a>
 
->Report</a>
-<a href=
-{% url 'restaurant-order'  %}
+      <span class="text-uppercase">Profile</span>
+      <a href="{% url 'restaurant-account' %}"
+          class="list-group-item {% if request.path == restaurant_account_url %} active {% endif %} ">Account</a>
+    </div>
 
->Order</a>
-
+    <div class="text-center">
+      <a href="{% url 'restaurant-sign-out' %}?next={{ request.path }}"
+          class="btn btn-pink">Logout</a>
+    </div>
 
 
 {% endblock %}
