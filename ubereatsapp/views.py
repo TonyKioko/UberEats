@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from ubereatsapp.forms import UserForm, RestaurantForm,UserFormForEdit
+from ubereatsapp.forms import UserForm, RestaurantForm,UserFormForEdit,MealForm
 
 from django.contrib.auth import authenticate, login
 
@@ -71,19 +71,19 @@ def restaurant_meal(request):
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_add_meal(request):
-    # form = MealForm()
+    form = MealForm()
 
-    # if request.method == "POST":
-    #     form = MealForm(request.POST, request.FILES)
+    if request.method == "POST":
+        form = MealForm(request.POST, request.FILES)
 
-    #     if form.is_valid():
-    #         meal = form.save(commit=False)
-    #         meal.restaurant = request.user.restaurant
-    #         meal.save()
-    #         return redirect(restaurant_meal)
+        if form.is_valid():
+            meal = form.save(commit=False)
+            meal.restaurant = request.user.restaurant
+            meal.save()
+            return redirect(restaurant_meal)
 
     return render(request, 'restaurant/add_meal.html', {
-        # "form": form
+        "form": form
     })
 
 # @login_required(login_url='/restaurant/sign-in/')

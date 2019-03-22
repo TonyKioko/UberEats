@@ -5,3 +5,5 @@ from . models import *
 admin.site.register(Restaurant)
 admin.site.register(Customer)
 admin.site.register(Driver)
+admin.site.register(Meal)
+
