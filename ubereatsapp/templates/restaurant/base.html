@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Restaurant
+{% endblock %}
+
+
+{% block sidebar%}
+Restaurant, Hi {{request.user}}
+<br/>
+<a href=
+{% url 'restaurant-order'  %}
+
+>Account</a>
+<a href=
+{% url 'restaurant-meal'  %}
+
+>Meal</a>
+<a href=
+{% url 'restaurant-report'  %}
+
+>Report</a>
+<a href=
+{% url 'restaurant-order'  %}
+
+>Order</a>
+
+
+
+{% endblock %}
+
