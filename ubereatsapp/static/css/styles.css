@@ -119,11 +119,15 @@ body {
   .table > thead > tr > th,
   .table > thead > tr > td {
     vertical-align: middle;
+    box-sizing: border-box;
   }
   
   .table,
   .table > thead > tr > th {
     border-color: #88A1B2;
+  }
+  .table > tbody > tr > td {
+    padding-top:50px;
   }
   
   
