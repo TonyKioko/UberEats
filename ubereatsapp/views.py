@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from ubereatsapp.forms import UserForm, RestaurantForm,UserFormForEdit,MealForm
-from ubereatsapp.models import Meal, Driver
+from ubereatsapp.models import Meal, Driver,Order
 
 
 from django.contrib.auth import authenticate, login
@@ -113,9 +113,9 @@ def restaurant_order(request):
     #         order.status = Order.READY
     #         order.save()
 
-    # orders = Order.objects.filter(restaurant = request.user.restaurant).order_by("-id")
+    orders = Order.objects.filter(restaurant = request.user.restaurant).order_by("-id")
     return render(request, 'restaurant/order.html', {
-        # "orders": orders
+        "orders": orders
         })
 
 # @login_required(login_url='/restaurant/sign-in/')

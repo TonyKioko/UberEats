@@ -127,7 +127,8 @@ body {
     border-color: #88A1B2;
   }
   .table > tbody > tr > td {
-    padding-top:50px;
+    padding-top:6px;
+    box-sizing: border-box
   }
   
   
