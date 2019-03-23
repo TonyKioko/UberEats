@@ -17,10 +17,12 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
-from ubereatsapp import views
+from ubereatsapp import views,apis
+
 
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -46,6 +48,9 @@ urlpatterns = [
     # url(r'^restaurant/meal/add/$', views.restaurant_add_meal, name = 'restaurant-add-meal'),
     # url(r'^restaurant/meal/edit/(?P<meal_id>\d+)/$', views.restaurant_edit_meal, name = 'restaurant-edit-meal'),
     url(r'^restaurant/order/$', views.restaurant_order, name = 'restaurant-order'),
+
+    # APIs for CUSTOMERS
+    url(r'^api/customer/restaurants/$', apis.customer_get_restaurants),
 
 
 ]
