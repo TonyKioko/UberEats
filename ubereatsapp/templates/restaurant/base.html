@@ -7,6 +7,14 @@ Restaurant
 
 {% block sidebar%}
 
+{% url 'restaurant-order' as restaurant_order_url %}
+{% url 'restaurant-meal' as restaurant_meal_url %}
+{% url 'restaurant-report' as restaurant_report_url %}
+{% comment %} {% url 'restaurant-customer' as restaurant_customer_url %} {% endcomment %}
+
+{% url 'restaurant-account' as restaurant_account_url %}
+
+
 <div class="text-center">
 <img src={{request.user.restaurant.logo.url}} alt="" class="img-circle" width="70" height="70">
 <br/>
