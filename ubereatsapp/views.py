@@ -88,20 +88,20 @@ def restaurant_add_meal(request):
         "form": form
     })
 
-# @login_required(login_url='/restaurant/sign-in/')
-# def restaurant_edit_meal(request, meal_id):
-#     form = MealForm(instance = Meal.objects.get(id = meal_id))
+@login_required(login_url='/restaurant/sign-in/')
+def restaurant_edit_meal(request, meal_id):
+    form = MealForm(instance = Meal.objects.get(id = meal_id))
 
-#     if request.method == "POST":
-#         form = MealForm(request.POST, request.FILES, instance = Meal.objects.get(id = meal_id))
+    if request.method == "POST":
+        form = MealForm(request.POST, request.FILES, instance = Meal.objects.get(id = meal_id))
 
-#         if form.is_valid():
-#             form.save()
-#             return redirect(restaurant_meal)
+        if form.is_valid():
+            form.save()
+            return redirect(restaurant_meal)
 
-#     return render(request, 'restaurant/edit_meal.html', {
-#         "form": form
-#     })
+    return render(request, 'restaurant/edit_meal.html', {
+        "form": form
+    })
 
 
 @login_required(login_url='/restaurant/sign-in/')
