@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# "bUbSQBWdcyovIJiJhrKYFWXOUmAVDCfyzJHDhjEw
 
+# cs f3iZ7pZefJVRXywCJ3bSrpZmN3htaVtrqHGElf4Dp8jYewN8RXQeoaD6slWCeDD0P9C0wu7wPnwW4YtYFcN411qsICf0ZyzjNbXA1GskBnj4v3i6hcgckyLCBYoTljUz
 # Application definition
 
 INSTALLED_APPS = [
