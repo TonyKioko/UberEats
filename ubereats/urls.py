@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('ubereatsapp.urls')),
 
+    # Sign In/ Sign Up/ Sign Out
+    url(r'^api/social/', include('rest_framework_social_oauth2.urls')),
+
     url(r'^restaurant/sign-in/$', auth_views.LoginView.as_view(
         template_name= 'restaurant/sign_in.html'),name = 'restaurant-sign-in'),
     url(r'^restaurant/sign-out', auth_views.LogoutView.as_view(next_page= '/'),

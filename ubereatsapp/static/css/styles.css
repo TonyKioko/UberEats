@@ -5,8 +5,12 @@ body {
     padding-top: 50px;
     background-color: #EDF2F5;
     overflow: auto;
+    font-family: 'Open Sans', sans-serif;
   }
   
+  /* font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif; */
+
   .bg-blue {
     background-color: #3F3F63;
   }

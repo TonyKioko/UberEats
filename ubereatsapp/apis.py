@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from ubereatsapp.models import Restaurant, Meal, Order, OrderDetails, Driver
 from ubereatsapp.serializers import RestaurantSerializer,MealSerializer
+from django.urls import reverse
 
 
 
